@@ -31,11 +31,11 @@ def click_powerups():
 
             print(no_cookies)
             available_powerups = driver.find_elements(By.CSS_SELECTOR, ".unlocked")
-            current_price_list = [int(i.text.split("\n")[1].replace(",","")) for i in available_powerups]
+            current_price_list = [int(i.text.split("\n")[1].replace(",", "")) for i in available_powerups]
 
             print(current_price_list)
 
-            for i in range(len(current_price_list)-1,-1,-1):
+            for i in range(len(current_price_list)-1, -1, -1):
                 if no_cookies >= current_price_list[i]:
                     available_powerups[i].click()
                 else:
